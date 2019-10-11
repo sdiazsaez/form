@@ -35,6 +35,11 @@ class FormServiceProvider extends ServiceProvider implements HasInstallable {
             'migrations' => [
                 'local_path' => base_path() . '/vendor/larangular/form/database/migrations',
             ],
+            'seeds'        => [
+                'local_path' => __DIR__ . '/../database/seeds',
+            ],
+            'seed_classes' => [
+            ],
         ]);
     }
 
