@@ -1,0 +1,34 @@
+{
+    "name": "larangular/form",
+    "description": "",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Simon Diaz",
+            "email": "sdiaz.sz@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1.3",
+        "illuminate/support": "5.*",
+        "larangular/support": "0.1.*",
+        "larangular/routing-controller": "0.1.*",
+        "larangular/migration-package": "0.1.*",
+        "larangular/installable": "0.1.*"
+    },
+    "autoload": {
+        "classmap": [
+            "database/seeds"
+        ],
+        "psr-4": {
+            "Larangular\\Form\\": "./src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Larangular\\Form\\FormServiceProvider"
+            ]
+        }
+    }
+}
