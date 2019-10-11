@@ -20,13 +20,13 @@ class FormServiceProvider extends ServiceProvider implements HasInstallable {
             __DIR__ . '/database/migrations',
             database_path('migrations/form'),
         ]);
+
+        $this->declareMigrationGlobal();
+        $this->declareMigrationForm();
     }
 
     public function register() {
         $this->mergeConfigFrom(__DIR__ . '/../config/form.php', 'form');
-        $this->declareMigrationGlobal();
-        $this->declareMigrationForm();
-
     }
 
     private function declareMigrationGlobal(): void {
