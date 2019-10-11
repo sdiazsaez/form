@@ -59,8 +59,8 @@ class FormServiceProvider extends ServiceProvider implements HasInstallable {
         ]);
 
         $this->declareMigration([
-            'name'      => 'form',
-            'tiemstamp' => true,
+            'name'      => 'forms',
+            'timestamp' => true,
         ]);
     }
 }

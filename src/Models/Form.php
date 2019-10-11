@@ -24,4 +24,12 @@ class Form extends Model {
         $this->timestamps = $installableConfig->getTimestamp('forms');
     }
 
+    public function fields() {
+        return $this->hasMany(FormField::class, 'form_id', 'id');
+    }
+
+    public function responses() {
+        return $this->hasMany(FormResponse::class, 'form_id', 'id');
+    }
+
 }
