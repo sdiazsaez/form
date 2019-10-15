@@ -13,7 +13,7 @@ class Form extends Model {
         'name',
         'header_color',
         'content_color',
-        'image_id'
+        'image_id',
     ];
 
     public function __construct(array $attributes = []) {
@@ -30,6 +30,10 @@ class Form extends Model {
 
     public function responses() {
         return $this->hasMany(FormResponse::class, 'form_id', 'id');
+    }
+
+    public function image() {
+        return $this->hasOne('Larangular\FileManager\Models\FileManager', 'id', 'image_id');
     }
 
 }

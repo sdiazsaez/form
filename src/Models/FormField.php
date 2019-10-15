@@ -3,6 +3,7 @@
 namespace Larangular\Form\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 use Larangular\Installable\Facades\InstallableConfig;
 use Larangular\RoutingController\Model as RoutingModel;
 
@@ -13,7 +14,7 @@ class FormField extends Model {
         'form_id',
         'key',
         'label',
-        'type'
+        'type',
     ];
 
     public function __construct(array $attributes = []) {
@@ -22,6 +23,11 @@ class FormField extends Model {
         $this->connection = $installableConfig->getConnection('form_fields');
         $this->table = $installableConfig->getName('form_fields');
         $this->timestamps = $installableConfig->getTimestamp('form_fields');
+    }
+
+    public function setLabelAttribute($value) {
+        $this->attributes['label'] = $value;
+        $this->attributes['key'] = Str::slug($value);
     }
 
 }
