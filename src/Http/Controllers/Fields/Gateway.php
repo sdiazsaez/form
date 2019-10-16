@@ -13,12 +13,4 @@ class Gateway extends Controller implements IGatewayModel {
         return FormField::class;
     }
 
-    public function allowedMethods() {
-        return [
-            'index',
-            'show',
-            'store',
-        ];
-    }
-
 }

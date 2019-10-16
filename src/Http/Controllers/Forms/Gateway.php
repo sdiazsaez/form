@@ -8,17 +8,8 @@ use Larangular\RoutingController\{Contracts\IGatewayModel, Controller};
 
 class Gateway extends Controller implements IGatewayModel {
 
-
     public function model() {
         return Form::class;
-    }
-
-    public function allowedMethods() {
-        return [
-            'index',
-            'show',
-            'store',
-        ];
     }
 
 }
