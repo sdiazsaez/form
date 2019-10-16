@@ -16,6 +16,11 @@ class Form extends Model {
         'image_id',
     ];
 
+    protected $with = [
+        'fields',
+        'image',
+    ];
+
     public function __construct(array $attributes = []) {
         parent::__construct($attributes);
         $installableConfig = InstallableConfig::config('Larangular\Form\FormServiceProvider');
