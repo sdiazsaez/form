@@ -24,7 +24,8 @@ class CreateFormsTable extends Migration {
             $table->string('name');
             $table->string('header_color');
             $table->string('content_color');
-            $table->integer('image_id');
+            $table->integer('image_id')
+                  ->nullable();
 
 
             if ($this->installableConfig->getTimestamp('forms')) {

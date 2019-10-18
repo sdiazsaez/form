@@ -22,4 +22,8 @@ class FormResponse extends Model {
         $this->timestamps = $installableConfig->getTimestamp('form_responses');
     }
 
+    public function getDataAttribute($value) {
+        return json_decode($value, true);
+    }
+
 }
