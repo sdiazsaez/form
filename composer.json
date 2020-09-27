@@ -9,12 +9,12 @@
         }
     ],
     "require": {
-        "php": "^7.1.3",
-        "illuminate/support": "5.*",
-        "larangular/support": "0.1.*",
-        "larangular/routing-controller": "0.1.*",
-        "larangular/migration-package": "0.1.*",
-        "larangular/installable": "0.1.*"
+        "php": ">=7.1",
+        "illuminate/support": "~5.8.0|^6.0|^7.0|^8.0",
+        "larangular/support": "^0.1.0|^0.2.0",
+        "larangular/routing-controller": "^0.1.0|^0.2.0",
+        "larangular/migration-package": "^0.1.0|^0.2.0",
+        "larangular/installable": "^0.1.0|^0.2.0"
     },
     "autoload": {
         "psr-4": {
