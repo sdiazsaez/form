@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Larangular\Installable\Facades\InstallableConfig;
 use Larangular\MigrationPackage\Migration\Schematics;
 
-class NullableformId extends Migration {
+class NullableFormId extends Migration {
 
     use Schematics;
 
