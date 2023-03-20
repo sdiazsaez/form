@@ -7,10 +7,11 @@ use Illuminate\Support\Str;
 use Jedrzej\Searchable\SearchableTrait;
 use Larangular\Form\Traits\HasPickerListValues;
 use Larangular\Installable\Facades\InstallableConfig;
+use Larangular\Metadata\Traits\Metable;
 use Larangular\RoutingController\Model as RoutingModel;
 
 class FormField extends Model {
-    use RoutingModel, HasPickerListValues, SearchableTrait;
+    use RoutingModel, Metable, HasPickerListValues, SearchableTrait;
 
     protected $fillable = [
         'form_id',
@@ -18,8 +19,12 @@ class FormField extends Model {
         'label',
         'type',
     ];
-
     protected $searchable = ['*'];
+
+    protected $with = [
+        'pickerListValues'
+    ];
+
 
     public function __construct(array $attributes = []) {
         parent::__construct($attributes);
