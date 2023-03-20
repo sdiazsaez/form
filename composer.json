@@ -16,7 +16,7 @@
         "larangular/migration-package": "^0.1.0|^0.2.0",
         "larangular/installable": "^0.1.0|^0.2.0",
         "larangular/routed-enum": "^0.1.5",
-        "jedrzej/searchable": "^0.0.17",
+        "jedrzej/searchable": "^0.0.14",
         "larangular/metadata": "^0.2.8"
     },
     "autoload": {
