@@ -4,11 +4,13 @@ namespace Larangular\Form\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Jedrzej\Searchable\SearchableTrait;
+use Larangular\Form\Traits\HasPickerListValues;
 use Larangular\Installable\Facades\InstallableConfig;
 use Larangular\RoutingController\Model as RoutingModel;
 
 class FormField extends Model {
-    use RoutingModel;
+    use RoutingModel, HasPickerListValues, SearchableTrait;
 
     protected $fillable = [
         'form_id',
@@ -16,6 +18,8 @@ class FormField extends Model {
         'label',
         'type',
     ];
+
+    protected $searchable = ['*'];
 
     public function __construct(array $attributes = []) {
         parent::__construct($attributes);
@@ -27,6 +31,12 @@ class FormField extends Model {
 
     public function setLabelAttribute($value) {
         $this->attributes['label'] = $value;
+        if (is_null($this->attributes['key'])) {
+            $this->attributes['key'] = $value;
+        }
+    }
+
+    public function setKeyAttribute($value) {
         $this->attributes['key'] = Str::slug($value);
     }
 
