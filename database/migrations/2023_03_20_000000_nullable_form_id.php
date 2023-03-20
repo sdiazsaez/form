@@ -25,7 +25,7 @@ class NullableFormId extends Migration {
                   ->nullable()
                   ->change();
             $table->unique([
-                'name',
+                'key',
                 'type',
             ]);
         });
@@ -34,7 +34,7 @@ class NullableFormId extends Migration {
     public function down() {
         $this->alter(function (Blueprint $table) {
             $this->dropUnique([
-                'name',
+                'key',
                 'type',
             ]);
             $table->integer('form_id')
